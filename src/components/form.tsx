@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react";
+import axios from "axios";
 
 
 export default function Form() {
@@ -35,7 +36,14 @@ export default function Form() {
             return
         }
         console.log(form)
-    }
+
+        try {
+            const { data } = await axios.post('/api', form)
+            console.log(data)
+        } catch {
+            setError('Error')
+        }
+}
 
     return (
       <form onSubmit={handleSubmit}>

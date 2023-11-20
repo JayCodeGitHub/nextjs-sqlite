@@ -10,6 +10,7 @@ export async function GET() {
 
 export async function POST(req: any) {
   const data = await req.json();
+  console.log(data)
   const title = data.title;
   const content = data.content;
   const newUser = await prisma.post.create({
