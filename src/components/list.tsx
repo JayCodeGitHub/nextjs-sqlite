@@ -11,7 +11,7 @@ export default function List() {
 
     const fetchData = async () => {
         try {
-            const response = await fetch("/api");
+            const response = await fetch("/api/posts");
             const newData = await response.json();
             console.log(newData);
             setData(newData)

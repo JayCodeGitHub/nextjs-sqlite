@@ -38,7 +38,7 @@ export default function Form() {
         console.log(form)
 
         try {
-            const { data } = await axios.post('/api', form)
+            const { data } = await axios.post('/api/posts', form)
             console.log(data)
         } catch {
             setError('Error')
